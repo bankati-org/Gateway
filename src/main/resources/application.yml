@@ -17,7 +17,7 @@ spring:
           - id: User-ms
             uri: lb://USER-MS
             predicates:
-              - Path=/user/**
+              - Path=/api/**
 
 server:
   port: 9007
