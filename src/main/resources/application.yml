@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Bank-Gateway
+  cloud:
+    gateway:
+
+      mvc:
+        routes:
+          - id: Cmi-ms
+            uri: lb://CMI-MS
+            predicates:
+              - Path=/ws/**
+          - id: Payment-provider-Ms
+            uri: lb://PAYMENT-PROVIDER-MS
+            predicates:
+              - Path=/api/**
+server:
+  port: 9007
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
