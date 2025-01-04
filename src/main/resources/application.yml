@@ -18,6 +18,10 @@ spring:
             uri: lb://USER-MS
             predicates:
               - Path=/api/**
+          - id: Creances-ms
+            uri: lb://CREANCES-MS
+            predicates:
+              - Path=/api/**
 
 server:
   port: 9007
