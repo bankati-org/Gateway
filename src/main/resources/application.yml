@@ -18,6 +18,7 @@ spring:
             uri: lb://USER-MS
             predicates:
               - Path=/api/**
+
 server:
   port: 9007
 eureka:
