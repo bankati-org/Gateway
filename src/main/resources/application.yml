@@ -13,6 +13,10 @@ spring:
           - id: Payment-provider-Ms
             uri: lb://PAYMENT-PROVIDER-MS
             predicates:
+              - Path=/payment/**
+          - id: user-ms
+            uri: lb://USER-MS
+            predicates:
               - Path=/api/**
 server:
   port: 9007
