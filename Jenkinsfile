@@ -10,6 +10,7 @@ pipeline {
         REGISTRY = 'minaouimh/ai'
         REGISTRY_CREDENTIAL = 'dockerhub'
         SONARQUBE_CREDENTIALS_ID = 'sonar'
+        SPRING_PROFILES_ACTIVE = 'prod'
     }
     stages {
         stage('clean work-space') {
