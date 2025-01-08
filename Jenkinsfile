@@ -10,6 +10,7 @@ pipeline {
         REGISTRY = 'minaouimh/ai'
         REGISTRY_CREDENTIAL = 'dockerhub'
         SONARQUBE_CREDENTIALS_ID = 'sonar'
+        SPRING_PROFILES_ACTIVE = 'prod'
     }
     stages {
         stage('clean work-space') {
@@ -26,12 +27,12 @@ pipeline {
         }
         stage('Build Application') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean package -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE}'
             }
         }
         stage('Test Application') {
-            steps{
-                sh 'mvn test'
+            steps {
+                sh 'mvn test -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE}'
             }
         }
         stage('sonar analysis') {
