@@ -5,7 +5,7 @@ pipeline {
         maven 'Maven3'
     }
     environment {
-        REPO_URL = 'https://github.com/bankati-org/User-ms.git'
+        REPO_URL = 'https://github.com/bankati-org/Gateway.git'
         MANIFEST_REPO = 'https://github.com/ia-project-org/MicroservicesConfiguration.git'
         REGISTRY = 'minaouimh/ai'
         REGISTRY_CREDENTIAL = 'dockerhub'
